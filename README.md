@@ -1,8 +1,8 @@
 # practice4 Гарбузов Павел БСБО-01-20
 ---
-#1
+# 1
 ---
-#2
+# 2 задание 
 1. **Использование устаревшего API MySQL:**
    ```php
    $result = mysqli_query($GLOBALS["___mysqli_ston"], $getid );
@@ -48,3 +48,44 @@
    $html .= '<pre>User ID exists in the database.</pre>';
    ```
    При выводе сообщений на страницу рекомендуется использовать функции безопасности, такие как `htmlspecialchars`, чтобы избежать возможных атак XSS.
+---
+# 3 задание 
+Исправленый участок кода 
+```
+<?php
+if (isset($_GET['Submit'])) {
+    $id = $_GET['id'];
+
+    $conn = new mysqli("localhost", "username", "password", "databaseName");
+    // Проверка соединения
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    // Использование подготовленного запроса для предотвращения SQL-инъекций
+    $stmt = $conn->prepare("SELECT first_name, last_name FROM users WHERE user_id = ?");
+    $stmt->bind_param("s", $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    // Получение результатов
+    $num = $result->num_rows;
+    if ($num > 0) {
+       
+        $html .= '<pre>Пользовательский ID существует в БД.</pre>';
+    } else {
+
+        // Пользователь не найден
+        header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
+
+        $html .= '<pre>Пользовательский ID не существует в БД.</pre>';
+    }
+
+    $stmt->close();
+    $conn->close();
+}
+
+?>
+```
+---
+# 4 задание 
+![image2](https://github.com/PaulZtx/practice4/assets/36164890/91094e58-0894-46f4-b74f-6d69cc9de4a8) 
