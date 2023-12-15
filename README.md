@@ -93,3 +93,27 @@ if (isset($_GET['Submit'])) {
 # 4 задание 
 #### При использовании sqlmap, в изначальной программе были найдены следующие уязвимости: 
 ![image2](https://github.com/PaulZtx/practice4/assets/36164890/91094e58-0894-46f4-b74f-6d69cc9de4a8) 
+---
+# 5 
+Запускаем **Burp Suite**, заходим на вкладку *proxy*, 
+открываем браузер.
+Теперь нужно авторизироваться на dwva через этот браузер
+
+Походим авторизацию, заходим на `SQL injection`, нажимаем **Submit**
+
+Видим, что все наши действия отображаются в окне **Burp**
+![img](https://github.com/PaulZtx/practice4/assets/36164890/d273c5a6-02fc-477f-821c-e3ff79139cfe)
+Выбираем последнее действие (Submit на dvwa), и выделяем то, что было введено нами в поле на сайте. Нажимаем правую кнопку мыши и выбираем Send to Intruder.
+В открывшемся окне переходим на вкладку Payloads, в которую добавляем инъекции для проверки. 
+![img_2](https://github.com/PaulZtx/practice4/assets/36164890/193100ae-756d-498c-9e7e-a6f13a02b343)
+Нажимаем Start attack
+Начинается процесс отправки запросов с пейлоадами на сервер.
+Возьмем инъекцию с наиболей полезной нагрузкой в виде ответа (payload).
+![изображение](https://github.com/PaulZtx/practice4/assets/36164890/39d91197-d56e-404a-850c-56f0d6b3dd50)
+Проверяем инъекцию.
+![img_4](https://github.com/PaulZtx/practice4/assets/36164890/804b0c09-8be2-49c1-8b1a-ebddbeb3b81a)
+![img_5](https://github.com/PaulZtx/practice4/assets/36164890/1b747190-1a31-4435-9033-71bbf2e6bd96)
+
+
+
+
