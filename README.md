@@ -2,7 +2,8 @@
 ---
 # 1 задание 
 С помощью статического анализатора кода PHP_CodeSniffer были получены следующие результаты.
-![image1](https://github.com/PaulZtx/practice4/assets/36164890/8aa1abe9-1dbe-4b39-9f17-67e2abed3a21)
+![изображение](https://github.com/PaulZtx/practice4/assets/36164890/83bc1d50-4308-4641-92b4-06c573a91cfc)
+
 ---
 # 2 задание 
 1. **Использование устаревшего API MySQL:**
