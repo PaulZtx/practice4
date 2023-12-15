@@ -88,4 +88,5 @@ if (isset($_GET['Submit'])) {
 ```
 ---
 # 4 задание 
+## При использовании sqlmap, в изначальной программе были найдены следующие уязвимости: 
 ![image2](https://github.com/PaulZtx/practice4/assets/36164890/91094e58-0894-46f4-b74f-6d69cc9de4a8) 
